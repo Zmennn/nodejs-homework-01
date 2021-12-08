@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-homework-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon",
+    "start":"node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zmennn/nodejs-homework-01.git"
+  },
+  "author": "Zmennn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zmennn/nodejs-homework-01/issues"
+  },
+  "homepage": "https://github.com/Zmennn/nodejs-homework-01#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
