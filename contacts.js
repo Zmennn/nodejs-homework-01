@@ -1,6 +1,7 @@
 const fs = require('fs/promises');
 const path = require('path');
 const crypto = require('crypto');
+var colors = require('colors');
 
 const contactsPath = path.join(__dirname, 'db', 'contacts.json');
 
@@ -25,17 +26,30 @@ const getContactById = async (contactId) => {
 
 const removeContact = async (contactId) => {
     const users = await readData();
-    const newData = users.filter((el) => el.id !== contactId);
-    writeData(newData);
-    return "user remove successfully"
+    console.log((users.some((el) => el.id == contactId)));
+    if (users.some((el) => el.id === contactId)) {
+        const newData = users.filter((el) => el.id !== contactId);
+        await writeData(newData);
+        console.log("user remove successfully".blue);
+    } else {
+        console.log("no such user found".red);
+    }
 };
 
 const addContact = async (user) => {
+
+    for (let key in user) {
+        if (!user[key]) {
+            console.log("incomplete user data, operation failed".red);
+            return
+        }
+    };
+
     user.id = crypto.randomUUID()
     const data = await readData();
     data.push(user);
-    writeData(data);
-    return `user ${user.name} is registered successfully`
+    await writeData(data);
+    console.log(`user ${user.name} is registered successfully`.blue);
 };
 
 module.exports = { listContacts, getContactById, removeContact, addContact, readData };
