@@ -36,12 +36,6 @@
     "phone": "(233) 738-2360"
   },
   {
-    "id": "9",
-    "name": "Thomas Lucas",
-    "email": "nec@Nulla.com",
-    "phone": "(704) 398-7993"
-  },
-  {
     "id": "10",
     "name": "Alec Howard",
     "email": "Donec.elementum@scelerisquescelerisquedui.net",
@@ -88,5 +82,11 @@
     "email": "mango@gmail.com",
     "phone": "322-22-22",
     "id": "ff2ac91d-d26b-4d83-b897-dba583039d9e"
+  },
+  {
+    "name": "Mango",
+    "email": "mango@gmail.com",
+    "phone": "322-22-22",
+    "id": "a43bcb29-db52-41e8-be9a-c42ff4164238"
   }
 ]

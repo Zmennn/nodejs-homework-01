@@ -26,13 +26,13 @@ const getContactById = async (contactId) => {
 
 const removeContact = async (contactId) => {
     const users = await readData();
-    console.log((users.some((el) => el.id == contactId)));
+
     if (users.some((el) => el.id === contactId)) {
         const newData = users.filter((el) => el.id !== contactId);
         await writeData(newData);
-        console.log("user remove successfully".blue);
+        return "user remove successfully".blue
     } else {
-        console.log("no such user found".red);
+        return "no such user found".red;
     }
 };
 
@@ -40,8 +40,8 @@ const addContact = async (user) => {
 
     for (let key in user) {
         if (!user[key]) {
-            console.log("incomplete user data, operation failed".red);
-            return
+
+            return "incomplete user data, operation failed".red
         }
     };
 
@@ -49,7 +49,7 @@ const addContact = async (user) => {
     const data = await readData();
     data.push(user);
     await writeData(data);
-    console.log(`user ${user.name} is registered successfully`.blue);
+    return `user ${user.name} is registered successfully`.blue
 };
 
 module.exports = { listContacts, getContactById, removeContact, addContact, readData };

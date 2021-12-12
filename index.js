@@ -32,12 +32,12 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 
         case 'add':
             const text = await addContact({ name, email, phone });
-
+            console.log(text);
             break;
 
         case 'remove':
             const info = await removeContact(id);
-
+            console.log(info);
             break;
 
         default:
