@@ -21,7 +21,7 @@ const listContacts = async () => {
 
 const getContactById = async (contactId) => {
     const users = await readData();
-    return users.find((el) => el.id === contactId)
+    return users.find((el) => el.id === contactId) ? users.find((el) => el.id === contactId) : "user not found".red
 };
 
 const removeContact = async (contactId) => {
